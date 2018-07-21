@@ -10,6 +10,7 @@ import we from '../componets/we'
 import cart from '../componets/cart'
 import message from '../componets/message'
 import people from '../componets/people'
+import foot from '../componets/foot'
 Vue.use(Router)
 export default new Router({
     routes: [{
@@ -26,8 +27,8 @@ export default new Router({
             component:reg
         }, {
             path: '/',
-            name: 'index',
-            component:index
+            name: 'foot',
+            component:foot
         }, {
             path: '/we',
             name: 'we',
