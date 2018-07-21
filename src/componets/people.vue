@@ -1,15 +1,15 @@
 <template>
   <div class="wrapper">
       {{msg}}
-      <foot></foot>
+      <!-- <foot></foot> -->
   </div>
 </template>
 
 <script>
-import foot from './foot'
+// import foot from './foot'
 export default {
   components:{
-      foot:foot
+      // foot:foot
   },
   props:{},
   data(){

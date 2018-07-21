@@ -1,5 +1,22 @@
 <template>
  <div>
+   <mt-tab-container v-model="selected">
+     <mt-tab-container-item id="首页">
+       <index></index>
+     </mt-tab-container-item>
+   <mt-tab-container-item id="微淘">
+      <we></we>
+   </mt-tab-container-item>
+    <mt-tab-container-item id="消息">
+      <message></message>
+   </mt-tab-container-item>
+    <mt-tab-container-item id="购物车">
+      <cart></cart>
+   </mt-tab-container-item>
+    <mt-tab-container-item id="我的淘宝">
+      <people></people>
+   </mt-tab-container-item>
+   </mt-tab-container>
   <mt-tabbar v-model="selected">
   <mt-tab-item id="首页">
     <img v-show="selected=='首页'" slot="icon" src="../assets/icon/home_active.png">
@@ -32,9 +49,18 @@
 </template>
 
 <script>
+import index from './index'
+import we from './we'
+import message from './message'
+import cart from './cart'
+import people from './people'
 export default {
   components:{
-    
+    index:index,
+    we:we,
+    message:message,
+    cart:cart,
+    people:people
   },
   props:{},
   data(){
@@ -45,16 +71,16 @@ export default {
   watch:{
     selected: function (newVal, oldVal) {
         // 这里就可以通过 val 的值变更来确定
-        let target='';
+        // let target='';
         console.log(newVal);
-        switch(newVal){
-           case '首页':target='index';break;
-           case '微淘':target='we';break;
-           case '消息':target='message';break;
-           case '购物车':target='cart';break;
-           default:target='people';
-        }
-        this.$router.push('/'+target);
+        // switch(newVal){
+        //    case '首页':target='index';break;
+        //    case '微淘':target='we';break;
+        //    case '消息':target='message';break;
+        //    case '购物车':target='cart';break;
+        //    default:target='people';
+        // }
+        // this.$router.push('/'+target);
         
     }
   },
